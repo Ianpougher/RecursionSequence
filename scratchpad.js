@@ -113,7 +113,7 @@ function tribHelper(n) {
         right.html.setAttribute("class", clas + " trib-right");
 
         value=left.value+center.value+right.value;
-        var p=document.createElement('p');
+         p=document.createElement('p');
         p.textContent='trib('+n+') = '+value;
         div.appendChild(p);
         div.appendChild(left.html);
@@ -127,36 +127,46 @@ var fib = function (n, node) {
 		node.appendChild(tree.html);
 		node.style = "display: inline-block;";
 	  node.setAttribute("id", "fib");
-}
+};
 //TODO finish pell wrapper class in the style of fib
 var pell = function(n, node) {
 	var tree=pellHelper(n);
 	node.appendChild(tree.html);
     node.style = "display: inline-block;";
 	node.setAttribute("id", "pell");
-}
+};
 var trib=function (n,node){
 	var tree=tribHelper(n);
 	node.appendChild(tree.html);
 	node.style= "display: inline-block;";
 	node.setAttribute("id", "trib");
-}
+};
+var hyperL=function(link,title)
+{
+    var link = link;
+    var element = document.createElement("a");
+    element.setAttribute("href", link);
+    element.innerHTML = title;
 
+    document.body.appendChild(element);
+    document.write("<br>")
+};
 var style = document.createElement('style');
-style.textContent = 
+style.textContent =
+
 	"#fib {" +
 	"	display: inline-block;" +
-	"	width: 15000px;" +
+	"	width: 20000px;" +
 	"}" +
 	"" +
     "#pell {" +
     "	display: inline-block;" +
-    "	width: 15000px;" +
+    "	width: 20000px;" +
     "}" +
     "" +
     "#trib {" +
     "	display: inline-block;" +
-    "	width: 40000px;" +
+    "	width: 60000px;" +
     "}" +
     "" +
 	".fib {" +
@@ -271,7 +281,7 @@ document.querySelector('body').appendChild(style);
 	document.body.appendChild(div);
 }('red', 'fib'));
 
-fib(9, document.querySelector('.red'))
+fib(11, document.querySelector('.red'));
 
 
 // divMakerMaker() is a function which returns a function
@@ -285,7 +295,7 @@ var divMakerMaker = function(color, id) {
 		div.setAttribute('id', id);
 		document.body.appendChild(div);
 	}
-}
+};
 
 var blueDiv = divMakerMaker('blue', 'fib');
 var yellowDiv = divMakerMaker('yellow', 'trib');
@@ -293,5 +303,8 @@ var yellowDiv = divMakerMaker('yellow', 'trib');
 blueDiv();
 yellowDiv();
 
-pell(10, document.querySelector('.blue'))
-trib(11, document.querySelector('.yellow'))
+pell(11, document.querySelector('.blue'));
+trib(11, document.querySelector('.yellow'));
+hyperL("https://oeis.org/A000045","fibonacci sequence info");
+hyperL("https://oeis.org/A000129","pell sequence info");
+hyperL("https://oeis.org/A000073","tribonacci sequence info");
