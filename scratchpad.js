@@ -33,7 +33,7 @@ function fibHelper(n) {
 		right.html.setAttribute("class", clas + " fib-right");
 
 		value = left.value + right.value;
-		var p = document.createElement('p');
+		 p = document.createElement('p');
 		p.textContent = 'Fib(' + n + ') = ' + value;
 		div.appendChild(p);
 
@@ -45,7 +45,7 @@ function fibHelper(n) {
 function pellHelper(n) {
     var value;
     var div = document.createElement('div');
-    div.setAttribute("class", "pell")
+    div.setAttribute("class", "pell");
     if (n < 2) {
         if (n === 0) {
             value = 0;
@@ -68,7 +68,7 @@ function pellHelper(n) {
             right.html.setAttribute("class", clas + " pell-right");
 
             value=2*left.value+right.value;
-            var p=document.createElement('p');
+             p=document.createElement('p');
             p.textContent='Pell('+n+') = '+value;
             div.appendChild(p);
             div.appendChild(left.html);
@@ -186,7 +186,7 @@ style.textContent =
 	"}" +
 	"" +
     ".pell {" +
-    "	background-color: rgba(255,175,0,0.1);" +
+    "	background-color: rgba(255,175,0,0.2);" +
     "}" +
     "" +
     ".pell-right {" +
@@ -202,7 +202,7 @@ style.textContent =
     "}" +
     "" +
     ".trib {" +
-    "	background-color: rgba(0,0,0,0.1);" +
+    "	background-color: rgba(0,0,0,0.2);" +
     "}" +
     "" +
     ".trib-right {" +
